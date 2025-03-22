@@ -1,41 +1,80 @@
-/* General Styles */
+/* Smooth Gradient Background */
 body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    background: linear-gradient(to right, #f8c291, #e77f67);
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
     color: black;
     transition: 0.5s ease-in-out;
 }
 
+/* Animate Background Gradient */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Clock Container */
 .container {
     margin-top: 100px;
     padding: 20px;
 }
 
+/* Neon Clock Style */
 #clock {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
     margin-top: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff66ff;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.2);
 }
 
+/* Stylish Button */
 button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     margin-top: 20px;
     border: none;
     background: #6a89cc;
     color: white;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 18px;
+    border-radius: 8px;
     transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
     background: #4a69bd;
+    transform: scale(1.05);
 }
 
-/* Dark Mode */
+/* Dark Mode Styles */
 .dark-mode {
-    background: linear-gradient(to right, #2c3e50, #34495e);
+    background: linear-gradient(45deg, #232526, #414345);
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease infinite;
     color: white;
+}
+
+/* Dark Mode Clock Glow */
+.dark-mode #clock {
+    color: #00ffea;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 40px #00ffea;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Dark Mode Button */
+.dark-mode button {
+    background: #ff7675;
+}
+
+.dark-mode button:hover {
+    background: #d63031;
 }
